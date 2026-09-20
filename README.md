@@ -32,6 +32,12 @@ v0.3
 v0.4
 - Increasing render distance.
 
+# Conditional Roadmap.
+
+- HD Texture mod,custom cars mod,cheats (Not cheat codes), and Multiplayer.
+
+I likely wont be doing these things but i could one day.
+
  # Screenshots
 
 ![image_alt](https://github.com/WeAnitTommyBruh/Colin-McRae-Rally-Recomp/blob/92a4a6f7b4f4a98f3974cc4ae2f49569fa395d72/Screenshot%202026-09-20%20151738.png)  
