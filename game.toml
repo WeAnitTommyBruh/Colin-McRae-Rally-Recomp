@@ -1,0 +1,105 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "ColinMcRaeRally"
+id = "SCUS-94474"
+players = 2
+exe = "disc/SCUS_944.74"
+disc = "disc/game.cue"
+load_address = "0x80013000"
+entry_pc = "0x800EC4D4"
+text_size = "0x000EE800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "game_track1.bin"
+cue_name = "game.cue"
+boot_exe = "SCUS_944.74"
+known_sizes = [210515760]
+known_md5 = [
+  "47cb81ebfdf802a092a35c5b653c2de3",
+]
+known_sha1 = [
+  "d4b4100249d7a14940fb9089cd13e05b6c4b98fb",
+]
+known_crc32 = [
+  "8c8588a5",
+]
+
+[recompiler]
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+discovery = "reachable"
+
+[runtime]
+window_title = "ColinMcRaeRally Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"    # Base shape. Widescreen is chosen in the launcher (Mods -> Colin McRae
+                        # Rally Widescreen); that mod's plugin sets the aspect at startup.
+# PGXP (sub-pixel vertices + perspective-correct textures) explicitly OFF.
+# The framework default is already off; these pin it so it can't change under us.
+geometry_correction   = false
+perspective_texturing = false
+pgxp_cpu_mode         = false
+# Only used if PGXP gets switched on. Max sub-pixel offset (px) accepted from the tracker.
+# The runtime already requires the integer pixel to match, so anything >= 1.0 behaves as unclamped.
+pgxp_tolerance        = 3.5
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 4
+required_disc_fp = "2d07c77c7d6de7a77d4d5605dbf1b3e1d167bbf69702d3e6a323cf8b6bc7e467"
+
+# Widescreen tuning. The view itself (16:9 / 21:9 / adaptive) is picked by the
+# colinmcrae.widescreen mod in the launcher; these two only shape how it renders.
+# Runtime-only (no regen needed).
+[widescreen]
+hud_sprt_squash = false  # HUD/menu sprites left as the game draws them (off by request)
+auto_ui_squash  = false  # no glyph/icon-run grouping (off by request)
+# Tell the runtime WHEN a frame is 3D gameplay. Without a classifier the framework
+# treats every frame as a 2D screen and presents it as a 4:3 pillarbox inside the wide
+# window (the "launches 16:9 but runs 4:3" symptom). This is the generic detector for
+# fully 3D titles: a frame that projects enough vertices through the GTE is gameplay;
+# menus, the title screen and FMV stay 4:3.
+gte_game_mode   = true
+
+# HUD corner re-anchoring: OFF. Tried it and it tore the in-race HUD (the framework warns
+# that elements straddling a third boundary split; this game's position box and rev counter
+# are drawn as multi-prim frames that do exactly that). HUD now stays at its 4:3 position,
+# inset from the wide edges, which is the intended-looking fallback.
+nw_hud_corners  = false
+# Scoping only: with an anchor configured the runtime treats polygons as the 3D world (never
+# shifted) and shifts only rect/sprite prims. Without it, world polygons in the outer thirds
+# would be moved too. No sprite_tag_funcs are set, so nothing is tagged and this reads no
+# scratchpad data; 0x1F800070 is just a valid scratchpad address.
+sprite_anchor_addr = "0x1F800070"
+
+# Widen the game's own screen-space reject tests. Found with:
+#   psxrecomp-analyze disc/SCUS_944.74 --scan-widescreen
+# (static scan: 3 functions carry the screen-extent signature, so auto_screen_x covers them).
+# The immediates are what the scan discovered from the image; they are candidates and
+# only playtesting confirms them. Changing this block needs re-running generate.
+[widescreen.cull]
+auto_screen_x = true
+screen_w_imms = ["0x103", "0x121", "0x200"]
+screen_h_imms = ["0x100", "0x101"]
+
+# NOT configured, and the reason the result will be imperfect: this game has had no
+# reverse engineering done on it. sprite_tag_funcs (per-prim proportion correction for
+# 3D billboards) and the [[widescreen.cull.keep]] / cull_* site lists (widening the
+# game's own 4:3 screen-space reject tests, which otherwise pop objects in and out near
+# the revealed edges) are per-title address lists found in Ghidra. See
+# psxrecomp/docs/WIDESCREEN.md. Adding either requires re-running generate.

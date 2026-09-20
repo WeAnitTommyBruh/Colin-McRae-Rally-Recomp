@@ -1,0 +1,46 @@
+diff --git a/runtime/include/mod_plugins.h b/runtime/include/mod_plugins.h
+index ac74d01e..531a8182 100644
+--- a/runtime/include/mod_plugins.h
++++ b/runtime/include/mod_plugins.h
+@@ -196,6 +196,11 @@ void psx_mod_set_stretch_2d_frames(int enabled);
+  * Keeps 2D menus that merely use the GTE (globe, ring text) presented as 2D.
+  */
+ void psx_mod_set_gte_scene_overhang_gate(int enabled);
++/*
++ * Minimum overhanging polygons per frame for the overhang signal (0 = built-in
++ * default, 4). Raise it when a 2D screen's backdrop art keeps tripping it.
++ */
++void psx_mod_set_scene_overhang_min_prims(uint32_t min_prims);
+ /*
+  * Set the wall-clock cadence of simulated guest VBlanks. A value of zero
+  * removes frontend pacing; 60 and higher request that many native guest
+diff --git a/runtime/src/gpu.c b/runtime/src/gpu.c
+index 0d0f8fd9..49e88197 100644
+--- a/runtime/src/gpu.c
++++ b/runtime/src/gpu.c
+@@ -387,6 +387,14 @@ static int ws_gte_overhang_gate = 0;
+ void psx_mod_set_gte_scene_overhang_gate(int enabled) {
+     ws_gte_overhang_gate = enabled ? 1 : 0;
+ }
++/* How many overhanging polygons a frame needs before the overhang signal fires. 0 keeps the
++ * built-in WS_OVERHANG_MIN_PRIMS. A 2D menu whose backdrop art runs past the screen edge can
++ * reach the small default and flap between "2D" and "gameplay"; a real 3D world submits far
++ * more, so a higher floor separates them. */
++static uint32_t ws_ovh_min_prims_override = 0;
++void psx_mod_set_scene_overhang_min_prims(uint32_t min_prims) {
++    ws_ovh_min_prims_override = min_prims;
++}
+ static int ws_2d_only_scene(void) {
+     if (ws_mod_world_scene()) return 0;
+     if (ws_full_2d_mode() || (ws_gte_game_mode_cfg && !ws_gte_overhang_gate)) return 0;
+@@ -5347,7 +5355,9 @@ static void ws_note_overhang(uint8_t op) {
+         ws_ovh_frame = f; ws_ovh_count = 0;
+     }
+     ws_ovh_count++;
+-    if (ws_ovh_count >= WS_OVERHANG_MIN_PRIMS && ws_last_ovh_stamp != f) {
++    if (ws_ovh_count >= (ws_ovh_min_prims_override ? ws_ovh_min_prims_override
++                                                   : WS_OVERHANG_MIN_PRIMS) &&
++        ws_last_ovh_stamp != f) {
+         if (f == ws_last_ovh_stamp + 1u) ws_sust_ovh_stamp = f;
+         ws_last_ovh_stamp = f;
+     }
