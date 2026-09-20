@@ -1,0 +1,4 @@
+# Shell scripts and Python must keep LF (MSYS2 bash breaks on CRLF); the Windows batch file needs CRLF.
+*.sh  text eol=lf
+*.py  text eol=lf
+*.bat text eol=crlf

@@ -1,0 +1,81 @@
+diff --git a/runtime/include/mod_plugins.h b/runtime/include/mod_plugins.h
+index 5320fb2b..236811b7 100644
+--- a/runtime/include/mod_plugins.h
++++ b/runtime/include/mod_plugins.h
+@@ -184,6 +184,12 @@ int psx_mod_set_fixed_display_aspect(uint32_t numerator,
+  */
+ int psx_mod_set_adaptive_display_aspect(uint32_t max_numerator,
+                                         uint32_t max_denominator);
++/*
++ * Present 2D (menu/title) frames stretched across a wide window instead of
++ * pillarboxed at 4:3. Native-wide only; FMV and the BIOS boot stay 4:3. The
++ * content is not squashed, so the stretch distorts it horizontally.
++ */
++void psx_mod_set_stretch_2d_frames(int enabled);
+ /*
+  * Set the wall-clock cadence of simulated guest VBlanks. A value of zero
+  * removes frontend pacing; 60 and higher request that many native guest
+diff --git a/runtime/src/main.cpp b/runtime/src/main.cpp
+index 43ca9a75..9da36e97 100644
+--- a/runtime/src/main.cpp
++++ b/runtime/src/main.cpp
+@@ -1392,6 +1392,17 @@ extern "C" int psx_mod_set_adaptive_display_aspect(
+     return 1;
+ }
+ 
++/* Trusted-mod request: present 2D (menu/title/full-2D) frames STRETCHED across the
++ * wide window instead of pillarboxed at 4:3. Native-wide only. The content is drawn
++ * canonical (no squash), so the stretch distorts it horizontally -- an explicit
++ * trade for filling the screen. FMV and the pre-game BIOS boot stay 4:3. */
++static int g_ws_stretch_2d_frames = 0;
++extern "C" void psx_mod_set_stretch_2d_frames(int enabled) {
++    g_ws_stretch_2d_frames = enabled ? 1 : 0;
++    std::fprintf(stdout, "psxrecomp: mod %s stretched 2D frames\n",
++                 enabled ? "enabled" : "disabled");
++}
++
+ extern "C" int psx_mod_set_native_vblank_rate(
+     uint32_t frames_per_second) {
+     if (frames_per_second != 0 &&
+@@ -7240,6 +7251,13 @@ static NetplayVblankEpilogue sdl_vblank_present_body(void) {
+          * locked: we squash IFF we stretch. depth24 always classifies as FMV
+          * even if the ws layer is not engaged yet (4:3 titles). */
+         fmv_frame = di.depth24 || !g_ws_engaged || gpu_ws_present_native_43() != 0;
++        /* Mod-requested stretch of 2D frames (see psx_mod_set_stretch_2d_frames).
++         * Only frames the ws layer classed native-4:3 that are neither FMV video
++         * (24-bit, or recent colour MDEC decode) nor the pre-game BIOS boot. */
++        const bool stretch_2d_frame =
++            g_ws_stretch_2d_frames && g_ws_engaged && g_ws_native_wide &&
++            !di.depth24 && gpu_ws_present_native_43() != 0 &&
++            !mdec_recently_active(30);
+         /* MDEC movies are already decoded at their authored cadence and are
+          * CPU/upload heavy. High-refresh crossfades only contend with decoding
+          * and can starve audio, so present native-4:3/MDEC phases directly.
+@@ -7312,7 +7330,7 @@ static NetplayVblankEpilogue sdl_vblank_present_body(void) {
+             } else {
+                 gl_renderer_present_vram((int)di.display_x, (int)di.display_y,
+                                          (int)present_w, (int)h, g_video_aa ? 1 : 0,
+-                                         (fmv_frame || nw_pin) ? 1 : 0);
++                                         ((fmv_frame || nw_pin) && !stretch_2d_frame) ? 1 : 0);
+                 netplay_note_present();
+                 return ep;
+             }
+@@ -7339,7 +7357,7 @@ static NetplayVblankEpilogue sdl_vblank_present_body(void) {
+             } else {
+                 vk_renderer_present_vram((int)di.display_x, (int)di.display_y,
+                                          (int)present_w, (int)h, g_video_aa ? 1 : 0,
+-                                         (fmv_frame || nw_pin) ? 1 : 0);
++                                         ((fmv_frame || nw_pin) && !stretch_2d_frame) ? 1 : 0);
+             }
+             netplay_note_present();
+             return ep;
+@@ -7385,7 +7403,8 @@ static NetplayVblankEpilogue sdl_vblank_present_body(void) {
+         }
+         /* depth24 (MotK crawl is 128 lines): pin short bands for letterbox even
+          * when fmv_frame is false on a plain 4:3 window (ws layer not engaged). */
+-        pin_43 = fmv_frame || di.depth24 || (nw_pin && !wide_present);
++        pin_43 = (fmv_frame && !stretch_2d_frame) || di.depth24 ||
++                 (nw_pin && !wide_present && !stretch_2d_frame);
+         if (!wide_present) {
+             /* Never hires-present under netplay CPU-auth (even if settings say
+              * 4× — that preference is offline-only). */
