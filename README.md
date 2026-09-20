@@ -3,7 +3,7 @@ The PSX version of Colin McRae Rally (SCUS-94474) has now been statically recomp
 
 # Why not play the pc version?
 
-Because running the version on modern windows is a headache even with patches and decompiling it will take much longer then this project being finished.
+Because running the pc version on modern windows is a headache even with patches and decompiling it will take much longer then this project being finished.
 
 # What do i need to run this recomp?
 
