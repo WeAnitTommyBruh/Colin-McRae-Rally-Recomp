@@ -12,8 +12,10 @@ Your need your own legal PSX Colin McRae Rally (SCUS-94474) disc files. You dont
 # How do i run it?
 
 1. Launch the scripts.
-2. Follow the steps.
-3. Go to build-release and launch the executables.
+   - On windows you just have to double click on build_windows.
+   - Linux is chmod +x ./build_linux then ./build_linux
+3. Follow the steps.
+4. Once finished Go to build-release and launch the executables.
 
 # Roadmap
 
