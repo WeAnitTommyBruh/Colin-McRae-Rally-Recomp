@@ -1,0 +1,21 @@
+# ninja log v6
+2	26	1789842127371477282	sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-mkdir	e3841d222f3d0c80
+2	26	1789842127371477282	/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-mkdir	e3841d222f3d0c80
+26	1903	1789842129251477273	sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-download	f05108329aa4ee30
+26	1903	1789842129251477273	/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-download	f05108329aa4ee30
+1903	1934	1789842129279477272	sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-update	cdd774e46ff4cab4
+1903	1934	1789842129279477272	/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-update	cdd774e46ff4cab4
+1934	1957	1789842129303477272	sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-patch	3122f54a32837dd2
+1934	1957	1789842129303477272	/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-patch	3122f54a32837dd2
+1957	1985	1789842129331477272	sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-configure	3a51d330eafc4600
+1957	1985	1789842129331477272	/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-configure	3a51d330eafc4600
+1985	2010	1789842129355477272	sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-build	a38b18a62f1d875e
+1985	2010	1789842129355477272	/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-build	a38b18a62f1d875e
+2010	2032	1789842129379477272	sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-install	128f33c7e15fa1f3
+2010	2032	1789842129379477272	/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-install	128f33c7e15fa1f3
+2032	2060	1789842129407477272	sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-test	ee37409740da7c7c
+2032	2060	1789842129407477272	/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-test	ee37409740da7c7c
+2060	2094	1789842129439477272	CMakeFiles/sdl3-populate-complete	11d0e434aaab95cf
+2060	2094	1789842129439477272	sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-done	11d0e434aaab95cf
+2060	2094	1789842129439477272	/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/CMakeFiles/sdl3-populate-complete	11d0e434aaab95cf
+2060	2094	1789842129439477272	/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/sdl3-populate-done	11d0e434aaab95cf

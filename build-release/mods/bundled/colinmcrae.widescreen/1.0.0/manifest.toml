@@ -1,0 +1,86 @@
+format_version = 6
+id = "colinmcrae.widescreen"
+version = "1.0.0"
+name = "Colin McRae Rally Widescreen"
+author = "ColinMcRaeRallyRecomp"
+description = "Wider field of view for Colin McRae Rally (USA). Choose a fixed 16:9 or 21:9 view, or an adaptive view that follows the size of the window."
+resolver = "declarative"
+save_compatibility = "shared"
+
+[[target]]
+game_id = "SCUS-94474"
+
+[[feature]]
+id = "widescreen"
+name = "Widescreen"
+description = "Squashes the game's 3D projection horizontally and presents it stretched, which shows more of the world at the sides. Experimental: the game has not been reverse engineered for this yet, so billboards and trackside objects may look stretched and scenery near the side edges may pop in and out. FMV and the BIOS boot always keep 4:3. Turn this off to get the original 4:3 picture. Applies the next time the game starts."
+group = "Visual"
+channel = "experimental"
+default_enabled = false
+
+[[option]]
+feature = "widescreen"
+id = "aspect"
+label = "View"
+description = "Fixed views always use that shape. Adaptive starts at 16:9 and then follows the window as you resize it, from 4:3 up to the chosen widest ratio."
+group = "Visual"
+type = "choice"
+default = "16-9"
+
+[[option.choice]]
+value = "16-9"
+label = "16:9"
+
+[[option.choice]]
+value = "21-9"
+label = "21:9 (ultrawide)"
+
+[[option.choice]]
+value = "adaptive-16-9"
+label = "Adaptive (up to 16:9)"
+
+[[option.choice]]
+value = "adaptive-21-9"
+label = "Adaptive (up to 21:9)"
+
+[[option]]
+feature = "widescreen"
+id = "menus"
+label = "Menus and 2D screens"
+description = "How menus, the title screen and other 2D screens fill a wide window. Keep 4:3 draws them at their real proportions with bars at the sides. Stretch fills the whole window but makes them look about 33% too wide. Needs the psxrecomp patches in patches/ (tools/apply_patches.py); without them this option has no effect."
+group = "Visual"
+type = "choice"
+default = "pillarbox"
+
+[[option.choice]]
+value = "pillarbox"
+label = "Keep 4:3 (no stretching)"
+
+[[option.choice]]
+value = "stretch"
+label = "Stretch to fill (distorted)"
+
+[[option]]
+feature = "widescreen"
+id = "detect"
+label = "Gameplay detection"
+description = "How the game decides a frame is the 3D track (widened) rather than a menu (left at 4:3). Strict needs a lot of geometry running past the screen edge, so menu backdrops cannot trigger it. Normal is the framework's lower bar. Any 3D treats every frame that uses 3D as gameplay, which widens the spinning-globe menus. If the track ever stays 4:3, try Normal."
+group = "Visual"
+type = "choice"
+default = "strict"
+
+[[option.choice]]
+value = "strict"
+label = "Strict (recommended)"
+
+[[option.choice]]
+value = "normal"
+label = "Normal"
+
+[[option.choice]]
+value = "any-3d"
+label = "Any 3D"
+
+[[plugin]]
+feature = "widescreen"
+id = "colinmcrae.widescreen"

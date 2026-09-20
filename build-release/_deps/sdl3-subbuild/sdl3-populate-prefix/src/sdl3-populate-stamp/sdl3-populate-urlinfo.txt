@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/download-sdl3-populate.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/verify-sdl3-populate.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-subbuild/sdl3-populate-prefix/src/sdl3-populate-stamp/extract-sdl3-populate.cmake
+source_dir=/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps/sdl3-src
+work_dir=/home/tommy/Documents/ColinMcRaeRallyRecomp/build-release/_deps
+url(s)=https://github.com/libsdl-org/SDL/releases/download/release-3.4.10/SDL3-3.4.10.tar.gz
+hash=SHA256=12b34280415ec8418c864408b93d008a20a6530687ee613d60bfbd20411f2785
+      no_extract=
+

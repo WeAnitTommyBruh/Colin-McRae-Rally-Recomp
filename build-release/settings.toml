@@ -1,0 +1,61 @@
+# psxrecomp user settings - written by the launcher. Safe to hand-edit.
+# Overrides the bundled game.toml; the command line overrides this file.
+
+[video]
+renderer          = "opengl"
+supersampling     = 4
+window_width      = 1920
+antialiasing      = true
+texture_filtering = "nearest"
+fmv_filter        = "nearest"
+geometry_correction   = false
+perspective_texturing = false
+crt_filter        = "raw"
+scanlines         = false
+scanline_strength = 0.5
+fast_boot         = false
+bios_hle          = true
+fullscreen        = 0
+frame_interpolation = false
+frame_interpolation_fps = 0
+aspect_ratio      = "4:3"
+rewind            = false
+rewind_depth      = 50
+rewind_interval   = 15
+
+[audio]
+frequency = 44100
+spu_hq = false
+
+[hotkeys]
+rewind_pad = 1272
+save_state_menu_pad = 2040
+fast_forward_pad = 1528
+fast_forward_toggle_pad = 0
+
+[launcher]
+skip_launcher = false
+
+[disc]
+path = "Z:/home/tommy/Documents/ColinMcRaeRallyRecomp/disc/game.cue"
+
+[memcard]
+dir     = "Z:/home/tommy/Documents/ColinMcRaeRallyRecomp/saves"
+card1   = "Z:/home/tommy/Documents/ColinMcRaeRallyRecomp/saves/card1.mcd"
+card2   = "Z:/home/tommy/Documents/ColinMcRaeRallyRecomp/saves/card2.mcd"
+enable1 = true
+enable2 = true
+
+[controller]
+p1_device = "keyboard"
+p1_mode   = "digital"
+p1_deadzone = 3276
+p2_device = "none"
+p2_mode   = "digital"
+p2_deadzone = 3276
+multitap  = true
+multitap_analog = true
+deadzone  = 3276
+
+[localization]
+language = "en"
