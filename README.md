@@ -11,19 +11,26 @@ Your need your own legal PSX Colin McRae Rally (SCUS-94474) disc files. You dont
 
 # How do i run it?
 
-1. Put your disc files in the disc folder.
-2. Then go to build-release and run the executable files.
-3. Change your settings in the launcher if you want,connect a controller or use your keyboard. Then click play.
+1. Run the scripts.
+2. Follow the steps.
+3. Once its finishes.
 
  If you want widescreen its in mods.
 
- # Whats been tested?
- 
- Booting (ofc),fmv,controller,saving,racing,rally school and 2 player.
-
  # Found a bug?
 
- If you find a bug report it in issues with your exact pc specs.
+ If you find a bug thats not mentioned report it in issues with your exact pc specs.
+
+ # Roadmap
+
+ v0.2
+ - Fixing Game Speed Bug. - Fixing Stretch Bug. - Adding PGXP Geometry Correction.
+
+v0.3 
+- Fixing problems with reshade. - Adding controller vibration on linux. - Fixing problems with two player mode.
+
+v0.4
+- Increasing render distance.
 
  # Screenshots
 
