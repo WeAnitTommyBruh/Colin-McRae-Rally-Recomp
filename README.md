@@ -34,5 +34,7 @@ v0.4
 
 ![image_alt](https://github.com/WeAnitTommyBruh/Colin-McRae-Rally-Recomp/blob/52c960022c321ac44d2245c73ff77f33ed6fbf95/Screenshot%202026-09-20%20151738.png)
 
-![image_alt](https://github.com/WeAnitTommyBruh/Colin-McRae-Rally-Recomp/blob/52c960022c321ac44d2245c73ff77f33ed6fbf95/Screenshot%202026-09-20%20151738.png)  
+![image_alt](https://github.com/WeAnitTommyBruh/Colin-McRae-Rally-Recomp/blob/bf99c102197fd66bfcb26889cfdc2c0e8f9778d9/Screenshot%202026-09-20%20160150.png) 
+
+![image_alt](https://github.com/WeAnitTommyBruh/Colin-McRae-Rally-Recomp/blob/bf99c102197fd66bfcb26889cfdc2c0e8f9778d9/Screenshot%202026-09-20%20160150.png)  
 
