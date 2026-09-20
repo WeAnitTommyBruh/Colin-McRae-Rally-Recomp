@@ -29,7 +29,10 @@ Your need your own legal PSX Colin McRae Rally (SCUS-94474) disc files. You dont
 
 ![image_alt](https://github.com/WeAnitTommyBruh/Colin-McRae-Rally-Recomp/blob/92a4a6f7b4f4a98f3974cc4ae2f49569fa395d72/Screenshot%202026-09-20%20151738.png)  
 
-![image_alt](https://github.com/WeAnitTommyBruh/Colin-McRae-Rally-Recomp/blob/d246e060c3025dbdc183c8cfd77d915d4849695c/Screenshot%202026-09-20%20160150.png)   
+![image_alt](https://github.com/WeAnitTommyBruh/Colin-McRae-Rally-Recomp/blob/d246e060c3025dbdc183c8cfd77d915d4849695c/Screenshot%202026-09-20%20160150.png)
+
+![image_alt](https://github.com/WeAnitTommyBruh/Colin-McRae-Rally-Recomp/blob/81a14917c0094824417930a64983b696e9f9e882/Screenshot%202026-09-20%20160326.png)   
+
 
 
 
