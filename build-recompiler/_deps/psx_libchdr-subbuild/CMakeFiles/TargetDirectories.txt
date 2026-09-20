@@ -1,0 +1,3 @@
+/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/CMakeFiles/psx_libchdr-populate.dir
+/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/CMakeFiles/edit_cache.dir
+/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/CMakeFiles/rebuild_cache.dir

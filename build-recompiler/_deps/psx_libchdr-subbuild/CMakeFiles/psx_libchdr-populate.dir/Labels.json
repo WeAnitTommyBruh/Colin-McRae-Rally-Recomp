@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/CMakeFiles/psx_libchdr-populate"
+		},
+		{
+			"file" : "/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/CMakeFiles/psx_libchdr-populate.rule"
+		},
+		{
+			"file" : "/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/CMakeFiles/psx_libchdr-populate-complete.rule"
+		},
+		{
+			"file" : "/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/psx_libchdr-populate-prefix/src/psx_libchdr-populate-stamp/psx_libchdr-populate-build.rule"
+		},
+		{
+			"file" : "/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/psx_libchdr-populate-prefix/src/psx_libchdr-populate-stamp/psx_libchdr-populate-configure.rule"
+		},
+		{
+			"file" : "/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/psx_libchdr-populate-prefix/src/psx_libchdr-populate-stamp/psx_libchdr-populate-download.rule"
+		},
+		{
+			"file" : "/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/psx_libchdr-populate-prefix/src/psx_libchdr-populate-stamp/psx_libchdr-populate-install.rule"
+		},
+		{
+			"file" : "/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/psx_libchdr-populate-prefix/src/psx_libchdr-populate-stamp/psx_libchdr-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/psx_libchdr-populate-prefix/src/psx_libchdr-populate-stamp/psx_libchdr-populate-patch.rule"
+		},
+		{
+			"file" : "/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/psx_libchdr-populate-prefix/src/psx_libchdr-populate-stamp/psx_libchdr-populate-test.rule"
+		},
+		{
+			"file" : "/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/psx_libchdr-populate-prefix/src/psx_libchdr-populate-stamp/psx_libchdr-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"psx_libchdr-populate"
+		],
+		"name" : "psx_libchdr-populate"
+	}
+}

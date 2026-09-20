@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/psx_libchdr-populate-prefix/src/psx_libchdr-populate-stamp/verify-psx_libchdr-populate.cmake;COMMAND;/usr/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-subbuild/psx_libchdr-populate-prefix/src/psx_libchdr-populate-stamp/extract-psx_libchdr-populate.cmake
+source_dir=/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps/psx_libchdr-src
+work_dir=/home/tommy/src/ColinMcRaeRallyRecomp/build-recompiler/_deps
+url(s)=/home/tommy/src/ColinMcRaeRallyRecomp/psxrecomp/third_party/libchdr-6cde5348eb118da3baf94f75a69577a005a484fd.tar.gz
+hash=SHA256=a222b1f1c842f988c2aad51e5f56ba94a423ed87ccab71f1abdb757caa7444f5
+      no_extract=
+
