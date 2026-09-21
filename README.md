@@ -20,7 +20,7 @@ Your need your own legal PSX Colin McRae Rally (SCUS-94474) disc files. You dont
 # Roadmap
 
 v0.2
-- Fixingmultiple bugs,adding pgxp geometry correction.
+- Fixing multiple bugs,adding pgxp geometry correction.
 
 v0.3
 - Adding controller vibration support for linux,Increasing render distance,fixing problems with reshade.
