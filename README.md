@@ -23,7 +23,7 @@ v0.2
 - Fixing game speed bug,Fixing stretch bug,adding pgxp geometry correction.
 
 v0.3
-- Adding controller vibration support for linux,fixing rally school bug.
+- Adding controller vibration support for linux.
 
 v0.4
 - Increasing render distance,fixing problems with reshade.
