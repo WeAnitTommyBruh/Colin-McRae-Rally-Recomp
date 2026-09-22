@@ -1,8 +1,6 @@
 # Colin McRae Rally Recomp
 The PSX version of Colin McRae Rally (SCUS-94474) has now been statically recompiled using psxrecomp and claude.
 
-![image_alt](https://github.com/WeAnitTommyBruh/Colin-McRae-Rally-Recomp/blob/e906ea395a99288a2d6f4831a865321e68c24c7d/image.png)
-
 # Why not play the offical pc version?
 
 Because running the version on modern windows is a headache even with patches and decompiling it will take much longer then this project being finished.
