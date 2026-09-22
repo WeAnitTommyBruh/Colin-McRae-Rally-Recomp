@@ -19,11 +19,14 @@ Your need your own legal PSX Colin McRae Rally (SCUS-94474) disc files. You dont
 
 # Roadmap
 
-v0.2
-- Fixing multiple game breaking bugs.
-
-v0.3
-- Adding controller vibration support for linux,Increasing render distance,fixing problems with reshade.
+- Fully working pgxp geometery correction.
+- Increasing render distance.
+- Cheat menu.
+- HD texture UI.
+- 3D camera.
+- Different weather conditions.
+- Mac os support.
+- Controller Vibration support for linux.
 
  # Found a bug?
 
