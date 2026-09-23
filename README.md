@@ -27,6 +27,7 @@ Your need your own legal PSX Colin McRae Rally (SCUS-94474) disc files. You dont
 - Different weather conditions.
 - Mac os support.
 - Controller Vibration support for linux.
+- Adding my own launcher.
 
  # Found a bug?
 
