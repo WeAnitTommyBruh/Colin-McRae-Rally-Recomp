@@ -19,7 +19,7 @@ Your need your own legal PSX Colin McRae Rally (SCUS-94474) disc files. You dont
 
 # Roadmap
 
-- Fully working pgxp geometery correction.
+- Stable pgxp geometery correction.
 - Increasing render distance.
 - Cheat menu.
 - HD texture UI.
